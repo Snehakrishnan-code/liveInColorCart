@@ -1,0 +1,123 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "productName": "Kurta",
+      "categoryId": 2,
+      "description": "Geometric Abstract Printed A-Line Midi Dress - Multi",
+      "rating": 4.1,
+      "price": 880,
+      "productImg": "https://i.postimg.cc/3wVcmFw1/17342-9-460x.webp",
+      "material": "cotton blend"
+    },
+    {
+      "id": 2,
+      "productName": "Frocks",
+      "categoryId": 3,
+      "description": "Girls Frocks & Dresses",
+      "rating": 3.9,
+      "price": 315,
+      "productImg": "https://i.postimg.cc/PqjjHkPw/suyae-512.webp",
+      "material": "Art Silk"
+    },
+    {
+      "id": 3,
+      "productName": "All top wear",
+      "categoryId": 1,
+      "description": "Moroses Regular Men's T-shirt",
+      "rating": 3.7,
+      "price": 460,
+      "productImg": "https://i.postimg.cc/g2DWGTRt/8efdj-512.webp",
+      "material": "polyster"
+    },
+    {
+      "id": 4,
+      "productName": "saree",
+      "categoryId": 2,
+      "description": "new banarasi jequrad saree",
+      "rating": 3.1,
+      "price": 568,
+      "productImg": "https://i.postimg.cc/7LzSCdMD/b23b3-512.webp",
+      "material": "Banarasi Silk"
+    },
+    {
+      "id": 5,
+      "productName": "Rompers",
+      "categoryId": 3,
+      "description": "Baby Sleep Suit Onesies & Rompers",
+      "rating": 4,
+      "price": 820,
+      "productImg": "https://i.postimg.cc/C1LDv5pM/qiyvz-400.jpg",
+      "material": "cotton "
+    },
+    {
+      "id": 7,
+      "productName": "jumpsuite",
+      "categoryId": 2,
+      "description": "green jumpsuite",
+      "rating": 4.5,
+      "price": 380,
+      "productImg": "https://i.postimg.cc/rpbcHZvd/y7byy-512.webp",
+      "material": "rayon"
+    },
+    {
+      "id": 8,
+      "productName": "Dresses",
+      "categoryId": 3,
+      "description": "Girls Pink Cotton Blend Frocks & Dresses Pack Of 1",
+      "rating": 4.8,
+      "price": 570,
+      "productImg": "https://i.postimg.cc/GpPVF7bw/9b1f0-512.webp",
+      "material": "cotton blend"
+    },
+    {
+      "id": 9,
+      "productName": "Shirts",
+      "categoryId": 1,
+      "description": "Trendy Designer Men's Shirts ",
+      "rating": 3.2,
+      "price": 290,
+      "productImg": "https://i.postimg.cc/MHCsBVMr/3-512.webp",
+      "material": "cotton"
+    },
+    {
+      "id": 10,
+      "productName": "tops",
+      "categoryId": 2,
+      "description": "TULSHI ENTERPRISE PRESENT Women Stylish New Embroidery Tops",
+      "rating": 4,
+      "price": 570,
+      "productImg": "https://i.postimg.cc/Y9Ycsr6V/1k2zg-512.webp",
+      "material": "georgette"
+    },
+    {
+      "id": 11,
+      "productName": "dresses",
+      "categoryId": 3,
+      "description": "Girls Red Net Frocks & Dresses",
+      "rating": 3.7,
+      "price": 654,
+      "productImg": "https://i.postimg.cc/pVSGFbK5/c7vyf-512.webp",
+      "material": "net"
+    },
+    {
+      "id": 12,
+      "productName": "Track Pants",
+      "categoryId": 1,
+      "description": "BLIVE Solid Men Black, Red Track Pants",
+      "rating": 4.1,
+      "price": 520,
+      "productImg": "https://i.postimg.cc/D0rCqmrv/dyx5x-512.webp",
+      "material": "cotton blend"
+    },
+    {
+      "id": "13",
+      "productName": "Trouser",
+      "description": "Trendy Mens Solid Trouser Pants",
+      "rating": "4.2",
+      "price": "550",
+      "productImg": "https://i.postimg.cc/Jny3Sy1b/obyh6-512.webp",
+      "material": "cotton"
+    }
+  ]
+}

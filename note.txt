@@ -1,0 +1,178 @@
+for projects
+---------------
+use angular material rather than bootstrap
+
+
+
+
+-  generate new project
+
+-  in index.js file   -  give bootstrap css link in heade tag.............and bootstrap js link in body tag  (when body works..js will work)
+-  all other links to be given in body only (eg. fond awesome)
+
+we would be using lazy loading technique 
+---------------------------------------------
+- Lazy loading is a technology of angular that allows you to load JavaScript components when a specific route is activated. 
+- It improves application load time speed by splitting the application into many bundles. 
+- When the user navigates by the app, bundles are loaded as needed.
+- Lazy loading is a strategy to identify resources as non-blocking (non-critical) and load these only when needed. 
+- It's a way to shorten the length of the critical rendering path, which translates into reduced page load times
+
+- here we will be applying lazy loading to a new module 
+- create lazy loaded module
+
+module create 
+--------------------
+ng g module moduleName
+
+create lazy loaded module
+-----------------------------
+ng g module moduleName --route moduleName --module rootmoduleName                      (--route to enable routing)
+for lazyloaded module......path will automatically come in routing.module.ts
+
+we in this project are going to do the admin side of a ecart website - where admins deal with product viewing -all (dashboard), view-individual product adding, editing and deleting (for which we have to create 5 components inside the product module)
+
+set path of all components of product module - in product.routing.module.ts
+
+for headers and footer (common layout)  - 
+----------------------------------------------
+we can use style.css and index ..
+but, here we will create a new module  and separate component in the module for headrs and footer 
+module ----- ng g module site-layout (only one ts file will be created as it is a simple module not lazyloaded)  ---- it will be created inside root module (app module)
+wee need html also, so inside the module create component - header and footer
+
+--------------- now all the required modules are created ----------------------------------
+
+
+
+
+connection path for SiteLayoutModule  --- connect with root module --- inside app module.ts--- import SiteLayoutModule   (importing modules --- path is not given as this layout is common for all files)
+also , export header and footer in sitelayoutmodule.ts
+
+inside - app.html -------------- give the selector
+<app-header></app-header>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+give a template - using---------- start bootstrap  --- templates -> ecommerce -> view source code-> dist -> index.html   -> copy code to header.html and footer.html
+
+
+the landing page is now ---- http://localhost:4200/product-- because of created submodule
+change this to landingpage--- change the path to '' in approuting module and use redirectTo key and give pathMatch:'full' --- so that it will be redicted only when user request empty path
+
+now, we need to add data... we will use fake api from json placeholder website.... instead of mongodb app
+-----------------------------------------------------------------------------------------------------------
+- open json placeholder
+- my json server
+- create your own server ------------ example section--open link
+-  source------- copy till demo (https://github.com/typicode/demo)--- paste in new webpage
+- open db.json
+- copy data format
+- create json file.. in assests (in a folder) 
+- paste code
+- we need json server to run this file
+                               interviewer can give their own json database to create content in angular accordingly???????????
+
+- open main terminal
+- npm i --save json-server
+
+- now, run db.json (Open terminal in db.json-----type npx json-server --watch db.json --port 3000)          (this is the running state..keep this running)
+- we need only post----------so remove other req from data
+
+
+dummy -
+{
+            "id": 1,
+            "productName": "Kurta",
+            "categoryId": 2,
+            "description": "Geometric Abstract Printed A-Line Midi Dress - Multi",
+            "rating": 4.1,
+            "price": 880,
+            "productImg": "https://i.postimg.cc/3wVcmFw1/17342-9-460x.webp", // upload images in post image and then take the direct link
+            "material": "cotton blend"
+}
+// category can be - 
+1 - MensWear
+2. - womensWear
+3. - KidsWear
+
+Data from server (localhost:3000/products) to frontend
+-----------------------------
+- using api request
+- get api call
+- api request created using httpclient module ---- import httpclient module in productmodule.ts and appmodule.ts
+- http call is done in services (inside product module)
+- dependancy injection in constructor (services) for httpclient
+- create method that should work on making api request in productservice.ts.... and call this function in viewallproduct.ts
+- store data using productlist
+- in the landing page (viewallproduct.html) you can keep only one card..
+and the remaining cards will apprears as per the data added ------ this is done using ngFor  structural directive
+
+reactive form creation ----
+-------------------------------
+- simple form format creation in html file
+- give unique id and name
+- import ReactiveFormsModule in the root module.ts
+- inject formbuilder class in constructor of required component ts file
+- using group method of formbuilder class .. define the form and give controls
+- connect form in html with the defined form....with [formGroup]......and give control to each input in the form..using formControlName
+- then create a method to add new product.. so that on clicking the button this method will works....method will be called using (ngSubmit) in the html file
+- addNewProduct(){
+    let newProductData = {
+      id: this.addProductForm.value.id,
+      productName: this.addProductForm.value.productName,
+      description: this.addProductForm.value.description,
+      rating: this.addProductForm.value.rating,
+      price: this.addProductForm.value.price,
+      productImg: this.addProductForm.value.productImg,
+      material: this.addProductForm.value.material
+  }
+This function shall take the values typed in the frontend
+- then create API request in the service file to post these details
+- to use this API... import productservices in ts file by dependacy injection
+
+
+access data from component path (URL)
+--------------------------------------
+- ActivatedRoute class is used......method used is params
+ActivatedRoute   -         class           (it also comes from router module)
+params           -         method
+
+
+delete
+-------
+- create API Requets in services
+- access the id from the URL section using ActivatedRoute class and params method (in ts file.. ngOnInit section)
+- using this id......... call the API method from services and navigate to first page..
+
+search box coding----------create pipe
+------------------
+- for searching key word we use pipe creation ---- to convert all typed letters to either uppercase or to lowercase.. or remove the spaces
+create pipe   -  
+- create a folter in product folder
+- ng g pipe pipename
+-   transform (value: (where will you apply filter), (by using what will you filter), (property using which you filter)): unknown {
+    return null;
+  }
+
+
+
+transfering data within different modules (note--- for within a module i.e. from one component to another -- we use dependancy injection)
+----------------------------------------
+BehaviourSubject in angular
+---------------------------
+using rxjs
+created inside services----- for it to be accessible everywhere
+- import BehaviourSubject from rxjs
+- BehaviourSubject is basically a class --- to use this create its object
+we want here to import search box from header to use pipe...
+- we will use two way binding technique... [(ngModel)].. which is of the module -- formsmodule.. 
+- import formsmodule in site-layout.module.ts
+-keyup event in input.. for function to work when each key of your keyboard is up.... (eg. keydown..mouseup)
+- define function search().. to get the keyup data
+- dependance inj in heardr.html to send this received data to services using next method.....
+- access the data send to services .. in the view-all-ts file using subscribe
+- add this to pipe in html-------- | filter:searchkey:'productName'
+
+edit button
+------------

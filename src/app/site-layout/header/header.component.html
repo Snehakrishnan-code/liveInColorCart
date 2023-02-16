@@ -1,0 +1,42 @@
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light"
+    style="background-color: rgb(167, 82, 246); color: white; margin: auto;">
+    <div class="container px-4 px-lg-5" style="color: white; margin: auto;">
+        <a class="navbar-brand" href="">Live In Colors</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item">
+                        
+                    <form action="">
+                            <div class="search-box">
+                                <button class="btn-search"><i class="fas fa-search"></i></button>
+                                <input (keyup)="search($event)" [(ngModel)]="searchterm" id="s1" name="se1" type="text" class="input-search" placeholder="Search Product">
+                            </div>
+                        </form>
+                  
+                </li>
+                <li class="nav-item" style="margin-top: auto; margin-bottom: auto;" ><a class="nav-link" href="/product/add-product">Add new product</a></li>
+            </ul>
+            <form class="d-flex" style="color: white;">
+                <button class="btn btn-outline-dark" type="submit">
+                    <i class="bi-cart-fill me-1"></i>
+                    Cart
+                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</nav><br>
+<!-- Header-->
+<header class="py-5" style="background-color: rgb(167, 82, 246); color: white; margin: auto;">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Live In Colors</h1>
+            <hr>
+            <p class="lead fw-normal text-white-50 mb-0">Flaunt yourself in our classic attire! All-day-everyday!</p>
+        </div>
+    </div>
+</header>

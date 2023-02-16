@@ -1,0 +1,67 @@
+<!-- section to display the category in the view all page -->
+<br><div class="container text-center">
+    <div class="row">
+        <div class="col-3 p-2">
+            <a (click)="filter('')" style="cursor: pointer;">
+                <img style="height: 150px; border: 2px,black;" class="w-50" src="https://i.postimg.cc/XqzpcTCs/all.png" alt="">
+                <h6>All Categories</h6>
+            </a>
+        </div>
+
+        <div class="col-3 p-2">
+            <a (click)="filter(1)" style="cursor: pointer;">
+                <img style="height: 150px; border: 2px,black;" class="w-50" src="https://i.postimg.cc/2y46pVbB/mens.webp" alt="">
+                <h6>Mens Wear</h6>
+            </a>
+        </div>
+
+        <div class="col-3 p-2">
+            <a (click)="filter(2)" style="cursor: pointer;">
+                <img style="height: 150px; border: 2px,black;" class="w-50" src="https://i.postimg.cc/Rq5Hfkfw/00-promo-21-women-designers.webp" alt="">
+                <h6>Womens Wear</h6>
+            </a>
+        </div>
+
+        <div class="col-3 p-2">
+            <a (click)="filter(3)" style="cursor: pointer;">
+                <img style="height: 150px; border: 2px,black;" class="w-50" src="https://i.postimg.cc/PqxQtkMq/kids.jpg" alt="">
+                <h6>Kids Wear</h6>
+            </a>
+        </div>
+    </div>
+</div>
+
+<hr style="border: 10px solid rgb(111, 0, 128);
+border-radius: 5px;">
+
+
+<!-- Section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div *ngFor="let i of filterproducts | filter:searchkey:'productName'" class="col mb-5 bg-light">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img style="height: 300px;" class="card-img-top" src="{{i.productImg}}" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{i.productName}}</h5>
+                            <br>
+                            <h5 class="fw-bolder">Description: {{i.description}}</h5><br>
+                            <h5 class="fw-bolder">Material: {{i.material}}</h5>
+                            <h5 class="fw-bolder">Price: Rs {{i.price}}</h5>
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                href="product/view-product/{{i.id}}">View options</a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
