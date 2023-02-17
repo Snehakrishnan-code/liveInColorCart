@@ -176,3 +176,10 @@ we want here to import search box from header to use pipe...
 
 edit button
 ------------
+- create form for editing in edit.html
+- import formsmodule in product.module.ts
+- to get data.. use the api call for geting data in dataservices
+- in ts file... access params... access the product details corresponding to the params
+- updateProduct(form:any) method defined in edit.ts file
+- call this function in edit-product.html file
+- #updateproductform="ngForm" and [(ngModel)] in input will be done to atomatically get the past details of product

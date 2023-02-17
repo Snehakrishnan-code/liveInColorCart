@@ -32,4 +32,9 @@ export class ProductserviceService {
     return this.httpClient.delete("http://localhost:3000/products/"+id)
   }
 
+  //edit Api   ---- we will use put instead of patch.. as the complete data can also be editted
+  updateProduct(id:any,data:any){
+    return this.httpClient.put("http://localhost:3000/products/"+id,data)
+  }
+
 }

@@ -26,7 +26,7 @@
       "categoryId": 1,
       "description": "Moroses Regular Men's T-shirt",
       "rating": 3.7,
-      "price": 460,
+      "price": "465",
       "productImg": "https://i.postimg.cc/g2DWGTRt/8efdj-512.webp",
       "material": "polyster"
     },
@@ -106,9 +106,9 @@
       "categoryId": 1,
       "description": "BLIVE Solid Men Black, Red Track Pants",
       "rating": 4.1,
-      "price": 520,
+      "price": "450",
       "productImg": "https://i.postimg.cc/D0rCqmrv/dyx5x-512.webp",
-      "material": "cotton blend"
+      "material": "polyster"
     },
     {
       "id": "13",

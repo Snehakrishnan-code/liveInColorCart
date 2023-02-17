@@ -1,14 +1,14 @@
 <br><div class="container w-50 text-center" style="background-color: rgb(182, 120, 240);">
-    <h1>Add New Product</h1>
-    <form action="">
-        <input  id="pid" name="p1" class="form-control mt-2 p-2" placeholder="Product Id" type="text">
-        <input  id="pname" name="p2" class="form-control mt-2 p-2" placeholder="Product Name" type="text">
-        <input  id="pcat" name="p3" class="form-control mt-2 p-2" placeholder="Category Id" type="text">
-        <input  id="pdes" name="p4" class="form-control mt-2 p-2" placeholder="Description" type="text">
-        <input  id="prat" name="p5" class="form-control mt-2 p-2" placeholder="Rating" type="text">
-        <input  id="pr" name="p6" class="form-control mt-2 p-2" placeholder="Price" type="text">
-        <input  id="pimg" name="p7" class="form-control mt-2 p-2" placeholder="Product Image" type="text">
-        <input  id="pmat" name="p8" class="form-control mt-2 p-2" placeholder="Material" type="text"> <br>
+    <h1>Update Product</h1>
+    <form (ngSubmit)="updateProduct(updateproductform)" #updateproductform="ngForm" action="">
+        <input [(ngModel)]="productdata.id" id="pid" name="p1" class="form-control mt-2 p-2" placeholder="Product Id" type="text">
+        <input [(ngModel)]="productdata.productName" id="pname" name="p2" class="form-control mt-2 p-2" placeholder="Product Name" type="text">
+        <input [(ngModel)]="productdata.categoryId" id="pcat" name="p3" class="form-control mt-2 p-2" placeholder="Category Id" type="text">
+        <input [(ngModel)]="productdata.description" id="pdes" name="p4" class="form-control mt-2 p-2" placeholder="Description" type="text">
+        <input [(ngModel)]="productdata.rating" id="prat" name="p5" class="form-control mt-2 p-2" placeholder="Rating" type="text">
+        <input [(ngModel)]="productdata.price" id="pr" name="p6" class="form-control mt-2 p-2" placeholder="Price" type="text">
+        <input [(ngModel)]="productdata.productImg" id="pimg" name="p7" class="form-control mt-2 p-2" placeholder="Product Image" type="text">
+        <input [(ngModel)]="productdata.material" id="pmat" name="p8" class="form-control mt-2 p-2" placeholder="Material" type="text"> <br>
         <button class="btn btn-success">Update Product</button> <br><br>
     </form>
 </div><br>
